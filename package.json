@@ -48,5 +48,12 @@
     "stylelint-config-standard": "^32.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "argon2": "^0.41.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "react-router-dom": "^7.1.5"
   }
 }
