@@ -34,66 +34,61 @@ export function RegistrationForm() {
   }
 
   return (
-    <div className="container">
-      <img
-        src="/ProBudget.png"
-        alt="ProBudget Logo"
-        className="w-32 mx-auto mb-4"
-      />
-      <form onSubmit={handleSubmit}>
-        <div className="flex flex-wrap mb-1">
-          <div className="w-1/2">
-            <h2 className="text-xl font-bold text-orange-500">Sign Up</h2>
-            <label className="mb-1 block">
-              <span className="underline">Username</span>
-              <input
-                required
-                name="username"
-                placeholder="username"
-                type="text"
-                className="block border border-gray-600 rounded p-2 h-8 w-full mb-2"
-              />
-            </label>
-            <br />
-            <br />
-            <label className="mb-1 block">
-              Password
-              <input
-                required
-                name="password"
-                placeholder="password"
-                type="password"
-                className="block border border-gray-600 rounded p-2 h-8 w-full mb-2"
-              />
-            </label>
-          </div>
+    <div className="flex flex-col items-center justify-center h-screen bg-[#13878B]">
+      <img src="/ProBudget.png" alt="ProBudget Logo" className="w-32 mb-4" />
+      <form onSubmit={handleSubmit} className="w-full max-w-sm">
+        <h2 className="text-6xl text-black text-center mb-6">Sign Up</h2>
+        <div className="mb-1">
+          <label className="mb-1 block">
+            <span className="underline text-2xl text-white">Username</span>
+            <input
+              required
+              name="username"
+              placeholder="Username"
+              type="text"
+              className="text-2xl block border border-gray-600 rounded p-2 h-12 w-full mb-2 mt-2"
+            />
+          </label>
+        </div>
+        <br></br>
+        <div className="mb-1">
+          <label className="mb-1 block">
+            <span className="underline text-2xl text-white">Password</span>
+            <input
+              required
+              name="password"
+              placeholder="Password"
+              type="password"
+              className=" text-2xl block border border-gray-600 rounded p-2 h-12 w-full mb-2 mt-2"
+            />
+          </label>
         </div>
         <button
           disabled={isLoading}
-          className="align-middle text-center border rounded py-1 px-3 bg-blue-600 text-white">
+          className="text-2xl px-20 text-center border rounded-full py-3 bg-white text-black mt-12 mx-auto block">
           Sign Up
         </button>
       </form>
-      <p className="mt-4 text-sm">
+      <p className="text-xl mt-8 text-white">
         Already have an account?{' '}
         <span
-          className="text-blue-600 cursor-pointer underline"
+          className="text-xl text-black cursor-pointer underline"
           onClick={() => navigate('/log-in')}>
           Login
         </span>
       </p>
 
       {popUp && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-          <div className="bg-white p-6 rounded shadow-lg text-center">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-10">
+          <div className="bg-[#cbcbcb] p-6 rounded shadow-lg text-center ">
             <h3 className="text-xl font-bold mb-2 text-black">
-              Account Created!
+              Account Created
             </h3>
-            <p className="text-black">
-              Your account has been successfully created.
+            <p className="text-black mt-4">
+              Your account has been successfully created
             </p>
             <button
-              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+              className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
               onClick={() => navigate('/log-in')}>
               OK
             </button>
