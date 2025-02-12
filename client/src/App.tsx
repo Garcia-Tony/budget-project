@@ -10,7 +10,7 @@ export function App() {
       <Routes>
         <Route index element={<RegistrationForm />} />
         <Route path="/sign-up" element={<Navigate to="/" />} />
-        <Route path="/sign-in" element={<AuthPage mode="sign-in" />} />
+        <Route path="/log-in" element={<AuthPage mode="log-in" />} />
         <Route path="/home" element={<Home />} />
       </Routes>
     </UserProvider>

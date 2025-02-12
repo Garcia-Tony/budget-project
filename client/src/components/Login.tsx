@@ -27,7 +27,7 @@ export function SignInForm() {
         },
         body: JSON.stringify(userData),
       };
-      const res = await fetch('/api/auth/sign-in', req);
+      const res = await fetch('/api/auth/log-in', req);
       if (!res.ok) {
         throw new Error(`fetch Error ${res.status}`);
       }

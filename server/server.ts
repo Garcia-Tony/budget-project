@@ -47,7 +47,7 @@ app.post('/api/auth/sign-up', async (req, res, next) => {
   }
 });
 
-app.post('/api/auth/sign-in', async (req, res, next) => {
+app.post('/api/auth/log-in', async (req, res, next) => {
   try {
     const { username, password } = req.body as Partial<Auth>;
     if (!username || !password) {

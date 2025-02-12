@@ -29,7 +29,7 @@ export function RegistrationForm() {
       alert(
         `Successfully registered ${user.username} as userId ${user.userId}.`
       );
-      navigate('/sign-in');
+      navigate('/log-in');
     } catch (err) {
       alert(`Error registering user: ${err}`);
     } finally {
@@ -79,6 +79,14 @@ export function RegistrationForm() {
           Sign Up
         </button>
       </form>
+      <p className="mt-4 text-sm">
+        Already have an account?{' '}
+        <span
+          className="text-blue-600 cursor-pointer underline"
+          onClick={() => navigate('/log-in')}>
+          Login
+        </span>
+      </p>
     </div>
   );
 }
