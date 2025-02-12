@@ -4,6 +4,8 @@ import { User } from './UserContext';
 
 export function RegistrationForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const [popUp, setPopUp] = useState(false);
+
   const navigate = useNavigate();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -23,13 +25,7 @@ export function RegistrationForm() {
       }
       const user = (await res.json()) as User;
       console.log('Registered', user);
-      console.log(
-        `You can check the database with: psql -d userManagement -c 'select * from users'`
-      );
-      alert(
-        `Successfully registered ${user.username} as userId ${user.userId}.`
-      );
-      navigate('/log-in');
+      setPopUp(true);
     } catch (err) {
       alert(`Error registering user: ${err}`);
     } finally {
@@ -72,7 +68,6 @@ export function RegistrationForm() {
             </label>
           </div>
         </div>
-
         <button
           disabled={isLoading}
           className="align-middle text-center border rounded py-1 px-3 bg-blue-600 text-white">
@@ -87,6 +82,24 @@ export function RegistrationForm() {
           Login
         </span>
       </p>
+
+      {popUp && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+          <div className="bg-white p-6 rounded shadow-lg text-center">
+            <h3 className="text-xl font-bold mb-2 text-black">
+              Account Created!
+            </h3>
+            <p className="text-black">
+              Your account has been successfully created.
+            </p>
+            <button
+              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+              onClick={() => navigate('/log-in')}>
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
