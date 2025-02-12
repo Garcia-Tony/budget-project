@@ -27,7 +27,9 @@
   },
   "devDependencies": {
     "@learningfuze/lfz-config": "^1.0.0",
-    "@types/react-router-dom": "^5.3.3",
+    "@types/bcp-47": "^1.0.0",
+    "@types/cli-color": "^2.0.6",
+    "@types/css-tree": "^2.3.10",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "autoprefixer": "^10.4.20",
@@ -51,13 +53,15 @@
     "stylelint-config-standard": "^32.0.0",
     "tailwindcss": "^4.0.4",
     "tsx": "^4.7.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.7.3"
   },
   "dependencies": {
     "argon2": "^0.41.1",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.13.1",
-    "react-router-dom": "^7.1.5"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.29.0"
   }
 }

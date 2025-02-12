@@ -45,6 +45,11 @@ export function SignInForm() {
 
   return (
     <div className="container">
+      <img
+        src="/ProBudget.png"
+        alt="ProBudget Logo"
+        className="w-32 mx-auto mb-4"
+      />
       <h2 className="text-xl font-bold">Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-wrap mb-1">

@@ -6,7 +6,6 @@ drop schema "public" cascade;
 
 create schema "public";
 
-
 create table "public"."users" (
   "userId"         serial,
   "username"       text not null,
