@@ -80,6 +80,14 @@ export function SignInForm() {
           Login
         </button>
       </form>
+      <p className="text-xl mt-8 text-black">
+        Don't have an account?{' '}
+        <span
+          className="text-xl text-black cursor-pointer underline"
+          onClick={() => navigate('/sign-up')}>
+          Sign Up
+        </span>
+      </p>
     </div>
   );
 }
