@@ -76,7 +76,9 @@ export function SignInForm() {
             </label>
           </div>
         </div>
-
+        <button disabled={isLoading} className="border">
+          Login
+        </button>
       </form>
     </div>
   );
