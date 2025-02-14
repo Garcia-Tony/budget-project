@@ -65,14 +65,14 @@ export function RegistrationForm() {
         </div>
         <button
           disabled={isLoading}
-          className="text-2xl px-20 text-center border rounded-full py-3 bg-white text-black mt-12 mx-auto block">
+          className="text-2xl px-20 text-center border rounded-full py-3 bg-white text-black mt-12 mx-auto block hover:bg-gray-200 transition">
           Sign Up
         </button>
       </form>
       <p className="text-xl mt-8 text-white">
         Already have an account?{' '}
         <span
-          className="text-xl text-black cursor-pointer underline"
+          className="text-xl text-black cursor-pointer underline hover:text-[#00C3C9] transition"
           onClick={() => navigate('/log-in')}>
           Login
         </span>
