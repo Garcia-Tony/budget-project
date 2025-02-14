@@ -64,13 +64,19 @@ export function SignInForm() {
                 className="block border border-gray-600 rounded p-2 h-8 w-full mb-2"
               />
             </label>
+            <label className="mb-1 block">
+              Password
+              <input
+                required
+                name="password"
+                placeholder="Password"
+                type="password"
+                className="block border border-gray-600 rounded p-2 h-8 w-full mb-2"
+              />
+            </label>
           </div>
         </div>
-        <button
-          disabled={isLoading}
-          className="align-middle text-center border rounded py-1 px-3 bg-blue-600 text-white">
-          Login
-        </button>
+
       </form>
     </div>
   );
