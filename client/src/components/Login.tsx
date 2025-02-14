@@ -59,16 +59,8 @@ export function SignInForm() {
               <input
                 required
                 name="username"
+                placeholder="Username"
                 type="text"
-                className="block border border-gray-600 rounded p-2 h-8 w-full mb-2"
-              />
-            </label>
-            <label className="mb-1 block">
-              Password
-              <input
-                required
-                name="password"
-                type="password"
                 className="block border border-gray-600 rounded p-2 h-8 w-full mb-2"
               />
             </label>
