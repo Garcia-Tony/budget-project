@@ -12,6 +12,10 @@ export function Home() {
     setPopUp(true);
   };
 
+  const closePopUp = () => {
+    setPopUp(false);
+  };
+
   return (
     <div className="relative flex-grow flex-1 px-4">
       <button
@@ -47,7 +51,9 @@ export function Home() {
               }}>
               Yes
             </button>
-            <button className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full">
+            <button
+              className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
+              onClick={closePopUp}>
               No
             </button>
           </div>
