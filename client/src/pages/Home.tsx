@@ -6,6 +6,11 @@ export function Home() {
   const { handleSignOut } = useUser();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [popUp, setPopUp] = useState(false);
+
+  const handlePopUp = () => {
+    setPopUp(true);
+  };
 
   return (
     <div className="relative flex-grow flex-1 px-4">
@@ -24,12 +29,29 @@ export function Home() {
         <div className="absolute top-12 left-4 bg-white shadow-md border rounded p-2 z-50">
           <button
             className="block text-center border rounded py-1 px-3 bg-blue-600 text-white w-full hover:bg-gray-200 transition"
-            onClick={() => {
-              handleSignOut();
-              navigate('/');
-            }}>
+            onClick={handlePopUp}>
             Log Out
           </button>
+        </div>
+      )}
+
+      {popUp && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-10">
+          <div className="bg-[#cbcbcb] p-6 rounded shadow-lg text-center ">
+            <h3 className="text-xl font-bold mb-2 text-black">Log Out?</h3>
+            <button
+              className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
+              onClick={() => {
+                handleSignOut();
+              }}>
+              Yes
+            </button>
+            <button
+              className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
+              >
+              No
+            </button>
+          </div>
         </div>
       )}
     </div>
