@@ -43,12 +43,11 @@ export function Home() {
               className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
               onClick={() => {
                 handleSignOut();
+                navigate('/sign-up');
               }}>
               Yes
             </button>
-            <button
-              className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
-              >
+            <button className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full">
               No
             </button>
           </div>
