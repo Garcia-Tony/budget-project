@@ -33,6 +33,8 @@ export function Home() {
         <h2 className="text-xl font-bold text-black">Expense</h2>
       </div>
 
+      <hr className="my-4 border-t-2 border-[#01898B]" />
+
       {isMenuOpen && (
         <div className="absolute top-12 left-4 bg-white shadow-md border rounded p-2 z-50">
           <button
