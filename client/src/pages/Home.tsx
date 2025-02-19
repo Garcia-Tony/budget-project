@@ -48,6 +48,7 @@ export function Home() {
               className="w-6 h-6 transition-transform duration-300"
             />
           </button>
+          <h2>Menu</h2>
           <button
             className="block text-center border rounded py-1 px-3 bg-blue-600 text-white w-full hover:bg-gray-200 transition"
             onClick={handlePopUp}>
