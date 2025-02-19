@@ -35,6 +35,8 @@ export function Home() {
 
       <hr className="my-4 border-t-2 border-[#01898B]" />
 
+      <p className=" text-lg text-black">No Current Expenses</p>
+
       {isMenuOpen && (
         <div className="absolute top-12 left-4 bg-white shadow-md border rounded p-2 z-50">
           <button
