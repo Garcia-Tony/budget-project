@@ -40,6 +40,15 @@ export function Home() {
           ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}
           `}>
           <button
+            className="flex justify-center w-full mb-2"
+            onClick={toggleMenu}>
+            <img
+              src="/arrow-left.svg"
+              alt="Close Menu"
+              className="w-6 h-6 transition-transform duration-300"
+            />
+          </button>
+          <button
             className="block text-center border rounded py-1 px-3 bg-blue-600 text-white w-full hover:bg-gray-200 transition"
             onClick={handlePopUp}>
             Log Out
