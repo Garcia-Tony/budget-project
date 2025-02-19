@@ -8,20 +8,16 @@ export function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [popUp, setPopUp] = useState(false);
 
-  const handlePopUp = () => {
-    setPopUp(true);
-  };
-
-  const closePopUp = () => {
-    setPopUp(false);
-  };
+  const handlePopUp = () => setPopUp(true);
+  const closePopUp = () => setPopUp(false);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
     <div className="relative flex-grow flex-1 px-4">
       <div className="flex items-center space-x-4">
         <button
           className="rounded py-1 px-3 bg-white hover:bg-gray-200 transition"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          onClick={toggleMenu}>
           <svg className="w-20 h-20 text-[#01898B]" viewBox="0 0 448 512">
             <path
               fill="currentColor"
@@ -29,6 +25,7 @@ export function Home() {
             />
           </svg>
         </button>
+
         <img src="/ProBudget.png" alt="Pro Budget Logo" className="w-16 h-16" />
         <h2 className="text-xl font-bold text-black">Expense</h2>
       </div>
@@ -38,7 +35,10 @@ export function Home() {
       <p className=" text-lg text-black">No Current Expenses</p>
 
       {isMenuOpen && (
-        <div className="absolute top-12 left-4 bg-white shadow-md border rounded p-2 z-50">
+        <div
+          className={`absolute top-0 left-0 h-full w-48 bg-white shadow-md border transform transition-transform duration-300
+          ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+          `}>
           <button
             className="block text-center border rounded py-1 px-3 bg-blue-600 text-white w-full hover:bg-gray-200 transition"
             onClick={handlePopUp}>
