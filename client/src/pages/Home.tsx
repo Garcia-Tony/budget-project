@@ -30,6 +30,7 @@ export function Home() {
           </svg>
         </button>
         <img src="/ProBudget.png" alt="Pro Budget Logo" className="w-16 h-16" />
+        <h2 className="text-xl font-bold text-black">Expense</h2>
       </div>
 
       {isMenuOpen && (
