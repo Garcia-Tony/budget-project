@@ -13,12 +13,12 @@ export function Home() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <div className="relative flex-grow flex-1 px-4">
+    <div className="relative flex-grow flex-1 pl-2 px-4">
       <div className="flex items-center space-x-4">
         <button
-          className="rounded py-1 px-3 bg-white hover:bg-gray-200 transition"
+          className="rounded py-2 px-1.5 bg-white hover:bg-gray-200 transition mt-6"
           onClick={toggleMenu}>
-          <svg className="w-20 h-20 text-[#01898B]" viewBox="0 0 448 512">
+          <svg className="w-8 h-8 text-[#01898B]" viewBox="0 0 448 512">
             <path
               fill="currentColor"
               d="M16 132h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
@@ -26,31 +26,51 @@ export function Home() {
           </svg>
         </button>
 
-        <img src="/ProBudget.png" alt="Pro Budget Logo" className="w-16 h-16" />
-        <h2 className="text-xl font-bold text-black">Expense</h2>
+        <img
+          src="/ProBudget.png"
+          alt="Pro Budget Logo"
+          className="size-14 max-w-[60px] max-h-[60px] mt-5"
+        />
+        <div className="flex  w-full">
+          <h2 className="text-4xl font-bold text-black ml-7 mr-40 mt-4">
+            Expenses
+          </h2>
+        </div>
       </div>
 
       <hr className="my-4 border-t-2 border-[#01898B]" />
 
-      <p className=" text-lg text-black">No Current Expenses</p>
+      <p className=" text-2xl text-black ml-2">No Current Expenses</p>
+
+      <div className="space-y-3 mt-4 px-[5px]">
+        <div className="h-16 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099] border"></div>
+        <div className="h-16 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099]"></div>
+        <div className="h-16 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099]"></div>
+      </div>
 
       {isMenuOpen && (
         <div
-          className={`absolute top-0 left-0 h-full w-48 bg-white shadow-md border transform transition-transform duration-300
-          ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}
-          `}>
+          className={`absolute top-0 left-0 h-screen w-64 bg-white shadow-md border transition-all transform ease-in-out
+  ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+  shadow-lg shadow-black`}>
           <button
             className="flex justify-center w-full mb-2"
             onClick={toggleMenu}>
-            <img
-              src="/arrow-left.svg"
-              alt="Close Menu"
-              className="w-6 h-6 transition-transform duration-300"
-            />
+            <svg
+              className="w-[55px] h-[55px] mr-[180px] mt-5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11.707 5.293a1 1 0 0 1 0 1.414L7.414 11H19a1 1 0 1 1 0 2H7.414l4.293 4.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0z"
+                fill="#01898B"
+              />
+            </svg>
           </button>
-          <h2>Menu</h2>
+
+          <h2 className="text-4xl ml-3 text-[#01898B] font-bold mt-8">Menu</h2>
+
           <button
-            className="block text-center border rounded py-1 px-3 bg-blue-600 text-white w-full hover:bg-gray-200 transition"
+            className="text-2xl block text-center border border-[#01898B] rounded-full py-1 px-[55px] ml-3 mt-10 bg-[#01898B] text-white  hover:bg-[#016B6D] transition"
             onClick={handlePopUp}>
             Log Out
           </button>
@@ -59,20 +79,22 @@ export function Home() {
 
       {popUp && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-10">
-          <div className="bg-[#cbcbcb] p-6 rounded shadow-lg text-center ">
-            <h3 className="text-xl font-bold mb-2 text-black">Log Out?</h3>
+          <div className="rounded-[50px] bg-[#cbcbcb] p-7 rounded shadow-lg text-center border border-black ">
+            <h3 className="text-5xl font-bold mb-5 mt-5 text-black">
+              Log Out?
+            </h3>
             <button
-              className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
+              className="mt-6 px-20 text-4xl font-bold py-2 px-12 bg-[#067E81] text-black border border-black rounded-full"
               onClick={() => {
                 handleSignOut();
                 navigate('/sign-up');
               }}>
-              Yes
+              YES
             </button>
             <button
-              className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
+              className="mt-6 px-20 text-4xl font-bold py-2 px-14 ml-4 bg-[#696969] text-black border border-black rounded-full"
               onClick={closePopUp}>
-              No
+              NO
             </button>
           </div>
         </div>
