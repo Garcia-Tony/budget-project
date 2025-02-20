@@ -80,15 +80,13 @@ export function RegistrationForm() {
 
       {popUp && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-10">
-          <div className="bg-[#cbcbcb] p-6 rounded shadow-lg text-center ">
-            <h3 className="text-xl font-bold mb-2 text-black">
-              Account Created
+          <div className="bg-[#cbcbcb] py-5 px-6 p-6 rounded shadow-lg text-center border border-black rounded-[50px] ">
+            <h3 className="text-[44px] font-bold text-black mt-1">
+              Account <br /> Created
             </h3>
-            <p className="text-black mt-4">
-              Your account has been successfully created
-            </p>
+
             <button
-              className="mt-6 px-20 text-3xl py-2 bg-[#067E81] text-black border rounded-full"
+              className="font-bold mt-6 px-28 text-4xl py-2 bg-[#067E81] text-black border border-black rounded-full"
               onClick={() => navigate('/log-in')}>
               OK
             </button>
