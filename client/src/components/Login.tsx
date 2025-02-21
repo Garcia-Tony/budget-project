@@ -86,7 +86,7 @@ export function SignInForm() {
         </div>
         <button
           disabled={isLoading}
-          className="md:mt-8 md:md:flex justify-center text-2xl px-20 text-center border rounded-full py-3 bg-white text-black mt-12 mx-auto block hover:bg-gray-200 transition">
+          className="md:mt-8 md:md:flex justify-center text-2xl px-20 md:px-28 lg:px-36 text-center border rounded-full py-3 bg-white text-black mt-12 mx-auto block hover:bg-gray-200 transition">
           Login
         </button>
       </form>
