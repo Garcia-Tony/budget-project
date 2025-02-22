@@ -113,6 +113,13 @@ export function NewExpense() {
 
       <label className="block">
         <span className=" text-xl text-black">Due Date</span>
+        <input
+          required
+          name="Amount"
+          placeholder="MM/DD/YYYY"
+          type="text"
+          className="text-l block border border-gray-600 rounded p-1 h-8 w-full"
+        />
       </label>
 
       {isMenuOpen && (
