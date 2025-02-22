@@ -89,7 +89,16 @@ export function NewExpense() {
 
       <h2>New Expense</h2>
 
-      <h2>Expense</h2>
+      <label className="block">
+        <span className=" text-xl text-black">Expense Name</span>
+        <input
+          required
+          name="Expense"
+          placeholder="Expense"
+          type="text"
+          className="text-l block border border-gray-600 rounded p-1 h-8 w-full"
+        />
+      </label>
 
       {isMenuOpen && (
         <div
