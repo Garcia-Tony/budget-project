@@ -87,6 +87,8 @@ export function NewExpense() {
 
       <hr className="my-4 border-t-2 border-[#01898B] md:mt-4" />
 
+      <h2>New Expense</h2>
+
       {isMenuOpen && (
         <div
           className={`absolute top-0 left-0 h-screen w-64 bg-white shadow-md border transition-all transform ease-in-out
