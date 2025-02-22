@@ -90,11 +90,11 @@ export function NewExpense() {
       <h2>New Expense</h2>
 
       <label className="block">
-        <span className=" text-xl text-black">Expense Name</span>
+        <span className=" text-xl text-black">Expense </span>
         <input
           required
           name="Expense"
-          placeholder="Expense"
+          placeholder="Expense Name"
           type="text"
           className="text-l block border border-gray-600 rounded p-1 h-8 w-full"
         />
@@ -109,6 +109,10 @@ export function NewExpense() {
           type="text"
           className="text-l block border border-gray-600 rounded p-1 h-8 w-full"
         />
+      </label>
+
+      <label className="block">
+        <span className=" text-xl text-black">Due Date</span>
       </label>
 
       {isMenuOpen && (
