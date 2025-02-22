@@ -102,6 +102,13 @@ export function NewExpense() {
 
       <label className="block">
         <span className=" text-xl text-black">Amount</span>
+        <input
+          required
+          name="Amount"
+          placeholder="$"
+          type="text"
+          className="text-l block border border-gray-600 rounded p-1 h-8 w-full"
+        />
       </label>
 
       {isMenuOpen && (
