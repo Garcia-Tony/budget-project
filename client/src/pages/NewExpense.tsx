@@ -113,6 +113,63 @@ export function NewExpense() {
 
       <label className="block">
         <span className=" text-xl text-black">Schedule</span>
+
+        <div className="pt-2">
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="Schedule"
+              value="every-week"
+              className="form-radio text-[#01898B]"
+              required
+            />
+            <span>Every Week</span>
+          </label>
+
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="Schedule"
+              value="every-week"
+              className="form-radio text-[#01898B]"
+              required
+            />
+            <span>Every Month</span>
+          </label>
+
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="Schedule"
+              value="every-week"
+              className="form-radio text-[#01898B]"
+              required
+            />
+            <span>Every 3 Months</span>
+          </label>
+
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="Schedule"
+              value="every-week"
+              className="form-radio text-[#01898B]"
+              required
+            />
+            <span>Every 6 Months</span>
+          </label>
+
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="Schedule"
+              value="every-week"
+              className="form-radio text-[#01898B]"
+              required
+            />
+            <span>Every Year</span>
+          </label>
+        </div>
       </label>
 
       {isMenuOpen && (
