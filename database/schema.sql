@@ -6,23 +6,21 @@ drop schema "public" cascade;
 
 create schema "public";
 
-CREATE TABLE "users" (
-  "userId" SERIAL PRIMARY KEY,
-  "username" varchar,
-  "passwordHash" varchar,
-  "createdAt" varchar,
-  "updatedAt" varchar
+create table "public"."users" (
+  "userId"         serial,
+  "username"       text not null,
+  "hashedPassword" text not null,
+  "createdAt"      timestamptz(6) not null default now(),
+  primary key ("userId"),
+  unique ("username")
 );
 
-CREATE TABLE "expenses" (
-  "expenseId" SERIAL PRIMARY KEY,
-  "userId" int,
-  "category" varchar,
-  "amount" numeric,
-  "expenseDate" date,
-  "recurringDate" date,
-  "createdAt" varchar,
-  "updatedAt" varchar
+create table "public"."todos" (
+  "todoId"      serial,
+  "userId"      integer        not null,
+  "task"        text           not null,
+  "isCompleted" boolean        not null,
+  "createdAt"   timestamptz(6) not null default now(),
+  "updatedAt"   timestamptz(6) not null default now(),
+  primary key ("todoId")
 );
-
-ALTER TABLE "expenses" ADD FOREIGN KEY ("userId") REFERENCES "users" ("userId");
