@@ -100,6 +100,10 @@ export function NewExpense() {
         />
       </label>
 
+      <label className="block">
+        <span className=" text-xl text-black">Amount</span>
+      </label>
+
       {isMenuOpen && (
         <div
           className={`absolute top-0 left-0 h-screen w-64 bg-white shadow-md border transition-all transform ease-in-out
