@@ -8,11 +8,13 @@ export function NewExpense() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [popUp, setPopUp] = useState(false);
   const [expense, setExpense] = useState(false);
+  const [, setCancel] = useState(false);
 
   const handlePopUp = () => setPopUp(true);
   const closePopUp = () => setPopUp(false);
   const handleExpense = () => setExpense(true);
   const closeExpense = () => setExpense(false);
+  const closeCancel = () => setCancel(false);
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
@@ -172,8 +174,17 @@ export function NewExpense() {
         </div>
       </label>
 
-      <button className="md:text-5xl md:px-20 mt-6 px-18 text-4xl font-bold py-2 px-12 bg-[#067E81] text-black border border-black rounded-full">
+      <button className="mt-6 px-18 text-4xl font-bold py-2 px-12 bg-[#067E81] text-black border border-black rounded-full">
         Save
+      </button>
+
+      <button
+        className="mt-6 px-18 text-4xl font-bold py-2 px-12 bg-[#067E81] text-black border border-black rounded-full"
+        onClick={() => {
+          closeCancel();
+          navigate('/home');
+        }}>
+        Cancel
       </button>
 
       {isMenuOpen && (
