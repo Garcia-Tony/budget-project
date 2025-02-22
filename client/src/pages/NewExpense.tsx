@@ -172,6 +172,10 @@ export function NewExpense() {
         </div>
       </label>
 
+      <button className="md:text-5xl md:px-20 mt-6 px-18 text-4xl font-bold py-2 px-12 bg-[#067E81] text-black border border-black rounded-full">
+        Save
+      </button>
+
       {isMenuOpen && (
         <div
           className={`absolute top-0 left-0 h-screen w-64 bg-white shadow-md border transition-all transform ease-in-out
