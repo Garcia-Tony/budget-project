@@ -89,6 +89,8 @@ export function NewExpense() {
 
       <h2>New Expense</h2>
 
+      <h2>Expense</h2>
+
       {isMenuOpen && (
         <div
           className={`absolute top-0 left-0 h-screen w-64 bg-white shadow-md border transition-all transform ease-in-out
