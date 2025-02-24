@@ -240,9 +240,7 @@ export function NewExpense() {
               Expense <br /> Created
             </h3>
 
-            <button
-              className="md:px-36 md:py-3 font-bold mt-6 px-28 text-4xl py-2 bg-[#067E81] text-black border border-black rounded-full"
-              onClick={() => navigate('/home')}>
+            <button className="md:px-36 md:py-3 font-bold mt-6 px-28 text-4xl py-2 bg-[#067E81] text-black border border-black rounded-full">
               OK
             </button>
           </div>
