@@ -4,17 +4,20 @@ import { UserProvider } from './components/UserContext';
 import { RegistrationForm } from './pages/SignUp';
 import { Home } from './pages/Home';
 import { NewExpense } from './pages/NewExpense';
+import { ExpenseProvider } from './pages/ExpenseContext';
 
 export function App() {
   return (
     <UserProvider>
-      <Routes>
-        <Route index element={<RegistrationForm />} />
-        <Route path="/sign-up" element={<Navigate to="/" />} />
-        <Route path="/log-in" element={<AuthPage mode="log-in" />} />
-        <Route path="/new-expense" element={<NewExpense />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
+      <ExpenseProvider>
+        <Routes>
+          <Route index element={<RegistrationForm />} />
+          <Route path="/sign-up" element={<Navigate to="/" />} />
+          <Route path="/log-in" element={<AuthPage mode="log-in" />} />
+          <Route path="/new-expense" element={<NewExpense />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </ExpenseProvider>
     </UserProvider>
   );
 }
