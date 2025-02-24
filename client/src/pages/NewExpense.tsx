@@ -9,6 +9,7 @@ export function NewExpense() {
   const [popUp, setPopUp] = useState(false);
   const [expense, setExpense] = useState(false);
   const [, setCancel] = useState(false);
+  const [save, setSave] = useState(false);
 
   const handlePopUp = () => setPopUp(true);
   const closePopUp = () => setPopUp(false);
@@ -16,6 +17,7 @@ export function NewExpense() {
   const closeExpense = () => setExpense(false);
   const closeCancel = () => setCancel(false);
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const handleSave = () => setSave(true);
 
   return (
     <div className="relative flex-grow flex-1 pl-2 px-4">
@@ -226,9 +228,26 @@ export function NewExpense() {
 
       <button
         className=" drop-shadow-xl mt-5 px-[65px] mr-1 ml-2 text-4xl font-bold py-1 px-12 bg-[#067E81] text-black border rounded-3xl"
-        style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
+        style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
+        onClick={handleSave}>
         Save
       </button>
+
+      {save && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-10">
+          <div className="md:px-8 md:py-8 bg-[#cbcbcb] py-5 px-6 p-6 rounded shadow-lg text-center border border-black rounded-[50px] ">
+            <h3 className="md:text-[50px] text-[44px] font-bold text-black mt-1">
+              Expense <br /> Created
+            </h3>
+
+            <button
+              className="md:px-36 md:py-3 font-bold mt-6 px-28 text-4xl py-2 bg-[#067E81] text-black border border-black rounded-full"
+              onClick={() => navigate('/home')}>
+              OK
+            </button>
+          </div>
+        </div>
+      )}
 
       <button
         className=" drop-shadow-xl mt-5 px-[50px] ml-7 text-4xl font-bold py-1 px-12 bg-[#696969] text-black border rounded-3xl"
