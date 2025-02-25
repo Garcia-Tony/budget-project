@@ -139,7 +139,7 @@ export function NewExpense() {
             required
             name="Amount"
             placeholder="$"
-            type="number"
+            type="text"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             className="mt-1 text-l block border border-gray-600 rounded p-2 h-9 w-full"
@@ -258,6 +258,16 @@ export function NewExpense() {
           onClick={handleSave}>
           Save
         </button>
+
+        <button
+          className=" drop-shadow-xl mt-5 px-[50px] ml-7 text-4xl font-bold py-1 px-12 bg-[#696969] text-black border rounded-3xl"
+          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
+          onClick={() => {
+            closeCancel();
+            navigate('/home');
+          }}>
+          Cancel
+        </button>
       </form>
 
       {save && (
@@ -275,16 +285,6 @@ export function NewExpense() {
           </div>
         </div>
       )}
-
-      <button
-        className=" drop-shadow-xl mt-5 px-[50px] ml-7 text-4xl font-bold py-1 px-12 bg-[#696969] text-black border rounded-3xl"
-        style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
-        onClick={() => {
-          closeCancel();
-          navigate('/home');
-        }}>
-        Cancel
-      </button>
 
       {isMenuOpen && (
         <div

@@ -21,10 +21,15 @@ const ExpenseContext = createContext<ExpenseContextType | undefined>(undefined);
 export const ExpenseProvider: React.FC<ExpenseProviderProps> = ({
   children,
 }) => {
-  const [expenses, setExpenses] = useState<Expense[]>([]);
+  const [expenses, setExpenses] = useState<Expense[]>(() => {
+    const storedExpenses = localStorage.getItem('expenses');
+    return storedExpenses ? JSON.parse(storedExpenses) : [];
+  });
 
   const addExpense = (expense: Expense) => {
+    const newExpense = [...expenses, expense];
     setExpenses([...expenses, expense]);
+    localStorage.setItem('expenses', JSON.stringify(newExpense));
   };
 
   return (
