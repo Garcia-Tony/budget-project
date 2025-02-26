@@ -126,7 +126,7 @@ export function NewExpense() {
             type="text"
             value={expenseName}
             onChange={(e) => setExpenseName(e.target.value)}
-            className="mt-1 text-l  md:text-xl block border border-gray-600 rounded p-2 h-9 md:h-10 w-full"
+            className="mt-1 text-l md:text-xl block border border-gray-600 rounded p-2 h-9 md:h-10 w-full"
           />
         </label>
 
@@ -143,7 +143,7 @@ export function NewExpense() {
             type="text"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="mt-1  md:text-xl text-l block border border-gray-600 rounded p-2 h-9 md:h-10 w-full"
+            className="mt-1 md:text-xl text-l block border border-gray-600 rounded p-2 h-9 md:h-10 w-full"
           />
         </label>
 

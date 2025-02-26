@@ -46,7 +46,7 @@ export function Home() {
         <div className="absolute right-4 md:right-6 md:top-3 top-2 md:top-[22px]">
           <button onClick={handleExpense}>
             <svg
-              className="mt-4 w-12 h-12 md:w-[60px] md:h-[60px] md:mt-[22px] text-[#01898B]"
+              className="mt-4 w-12 h-12 md:w-[60px] md:h-[60px] md:mt-[14px] text-[#01898B]"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -98,12 +98,14 @@ export function Home() {
         {expenses.length === 0 ? 'No Current Expenses' : 'Current Expenses'}
       </p>
 
-      <div className="space-y-3 mt-4 px-[5px]">
+      <div className="space-y-3 mt-3 px-[5px]">
         {expenses.length === 0 && (
           <>
-            <div className="h-16 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099] border"></div>
-            <div className="h-16 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099]"></div>
-            <div className="h-16 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099]"></div>
+            <div className="">
+              <div className=" md:mb-2 md:h-20 h-16 mb-1 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099] border"></div>
+              <div className=" md:mb-2 md:h-20 h-16 mb-1 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099]"></div>
+              <div className=" md:mb-2 md:h-20 h-16 mb-1 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099]"></div>
+            </div>
           </>
         )}
 
@@ -111,8 +113,8 @@ export function Home() {
           expenses.map((expense, index) => (
             <div
               key={index}
-              className="h-16 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099]">
-              <div className="flex px-2 mb-2 pt-1">
+              className="mb-[-4px] md:mb-[-5px] md:text-xl h-16 md:h-20 bg-[#EFEFEF] rounded-lg shadow-md shadow-[#00000099]">
+              <div className="flex px-2 md:mt-2 mb-2 md:mb-3 pt-1">
                 <p>{expense.name}</p>
               </div>
               <div className="flex justify-between items-center px-2">
@@ -122,9 +124,9 @@ export function Home() {
             </div>
           ))}
 
-        <div className="h-5 flex justify-between items-center px-2 font-bold">
-          <p className="text-xl text-black">Total</p>
-          <p className="text-xl text-black">${totalAmount}</p>
+        <div className="h-5 md:h-6 flex justify-between items-center px-2 font-bold">
+          <p className="text-xl md:text-2xl text-black">Total</p>
+          <p className="text-xl md:text-2xl text-black">${totalAmount}</p>
         </div>
       </div>
 
