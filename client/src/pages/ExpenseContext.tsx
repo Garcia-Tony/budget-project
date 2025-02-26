@@ -17,6 +17,7 @@ interface Expense {
 interface ExpenseContextType {
   expenses: Expense[];
   addExpense: (expense: Expense) => void;
+  totalAmount: number;
 }
 
 interface ExpenseProviderProps {
@@ -50,8 +51,13 @@ export const ExpenseProvider: React.FC<ExpenseProviderProps> = ({
     );
   };
 
+  const totalAmount = expenses.reduce(
+    (sum, expense) => sum + Number(expense.amount),
+    0
+  );
+
   return (
-    <ExpenseContext.Provider value={{ expenses, addExpense }}>
+    <ExpenseContext.Provider value={{ expenses, addExpense, totalAmount }}>
       {children}
     </ExpenseContext.Provider>
   );

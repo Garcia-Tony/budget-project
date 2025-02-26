@@ -4,7 +4,7 @@ import { useExpenses } from './ExpenseContext';
 import { useData } from '../components/User';
 
 export function Home() {
-  const { expenses } = useExpenses();
+  const { expenses, totalAmount } = useExpenses();
   const { handleSignOut } = useData();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -120,6 +120,11 @@ export function Home() {
               </div>
             </div>
           ))}
+
+        <div className="h-4 flex justify-between items-center px-2 font-bold">
+          <p className="text-xl text-black">Total</p>
+          <p className="text-xl text-black">${totalAmount}</p>
+        </div>
       </div>
 
       {isMenuOpen && (
