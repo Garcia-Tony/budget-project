@@ -169,7 +169,7 @@ export function NewExpense() {
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
             Schedule
           </span>
-          <div className="mt-2 pt-2 bg-[#E1E0E0] rounded-lg shadow-md p-2">
+          <div className="mt-2 pt-2 bg-[#E1E0E0] rounded-lg shadow-md shadow-gray-500 p-2">
             <label className="mt-1 flex items-center space-x-2">
               <input
                 type="radio"

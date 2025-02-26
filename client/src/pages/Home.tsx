@@ -45,7 +45,7 @@ export function Home() {
 
           <button onClick={handleExpense}>
             <svg
-              className="ml-[-50px] md:ml-[100px] md:w-[50px] md:h-[50px] mt-4 md:mb-4 w-12 h-12 text-[#01898B]"
+              className="ml-[-50px] md:ml-[100px] md:w-[60px] md:h-[60px] mt-4 md:mb-4 w-12 h-12 text-[#01898B]"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -121,7 +121,7 @@ export function Home() {
             </div>
           ))}
 
-        <div className="h-4 flex justify-between items-center px-2 font-bold">
+        <div className="h-5 flex justify-between items-center px-2 font-bold">
           <p className="text-xl text-black">Total</p>
           <p className="text-xl text-black">${totalAmount}</p>
         </div>
