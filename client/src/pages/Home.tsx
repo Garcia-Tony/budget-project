@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from '../components/useUser';
 import { useExpenses } from './ExpenseContext';
+import { useData } from '../components/User';
 
 export function Home() {
   const { expenses } = useExpenses();
-  const { handleSignOut } = useUser();
+  const { handleSignOut } = useData();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [popUp, setPopUp] = useState(false);
@@ -114,7 +114,6 @@ export function Home() {
               <div className="flex px-2 mb-2 pt-1">
                 <p>{expense.name}</p>
               </div>
-
               <div className="flex justify-between items-center px-2">
                 <p>{expense.dueDate}</p>
                 <p>${expense.amount}</p>

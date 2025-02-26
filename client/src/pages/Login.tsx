@@ -1,7 +1,8 @@
 import { type FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { User, useUser } from '../components/useUser';
+import { User } from '../components/UserContext';
 import { readToken } from '../lib';
+import { useData } from '../components/User';
 
 type AuthData = {
   user: User;
@@ -9,7 +10,7 @@ type AuthData = {
 };
 
 export function SignInForm() {
-  const { handleSignIn } = useUser();
+  const { handleSignIn } = useData();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 

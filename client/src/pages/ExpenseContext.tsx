@@ -1,4 +1,11 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react';
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useState,
+  useEffect,
+} from 'react';
+import { useData } from '../components/User';
 
 interface Expense {
   name: string;
@@ -21,15 +28,26 @@ const ExpenseContext = createContext<ExpenseContextType | undefined>(undefined);
 export const ExpenseProvider: React.FC<ExpenseProviderProps> = ({
   children,
 }) => {
-  const [expenses, setExpenses] = useState<Expense[]>(() => {
-    const storedExpenses = localStorage.getItem('expenses');
-    return storedExpenses ? JSON.parse(storedExpenses) : [];
-  });
+  const { user } = useData();
+  const [expenses, setExpenses] = useState<Expense[]>([]);
+
+  useEffect(() => {
+    if (user) {
+      const storedExpenses = localStorage.getItem(`expenses_${user.userId}`);
+      setExpenses(storedExpenses ? JSON.parse(storedExpenses) : []);
+    }
+  }, [user]);
 
   const addExpense = (expense: Expense) => {
-    const newExpense = [...expenses, expense];
-    setExpenses([...expenses, expense]);
-    localStorage.setItem('expenses', JSON.stringify(newExpense));
+    if (!user) return;
+
+    const updatedExpenses = [...expenses, expense];
+    setExpenses(updatedExpenses);
+
+    localStorage.setItem(
+      `expenses_${user.userId}`,
+      JSON.stringify(updatedExpenses)
+    );
   };
 
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from '../components/useUser';
 import { useExpenses } from './ExpenseContext';
+import { useData } from '../components/User';
 
 export function NewExpense() {
   const { addExpense } = useExpenses();
@@ -10,7 +10,7 @@ export function NewExpense() {
   const [dueDate, setDueDate] = useState('');
   const [schedule, setSchedule] = useState('');
 
-  const { handleSignOut } = useUser();
+  const { handleSignOut } = useData();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [popUp, setPopUp] = useState(false);
