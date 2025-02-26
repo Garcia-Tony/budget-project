@@ -39,33 +39,34 @@ export function Home() {
           className="size-14 max-w-[60px] max-h-[60px] mt-5 md:size-20 md:mt-4 md:max-w-[150px] md:max-h-[150px]"
         />
         <div className=" flex-1 flex justify-center">
-          <h2 className="md:text-6xl text-4xl font-bold text-center text-black ml-12 md:ml-[150px] mr-40 mt-4 md:mt-7 md:mb-4 ">
+          <h2 className="md:text-6xl text-4xl font-bold text-center text-black ml-12 md:ml-[-10px] mr-40 mt-4 md:mt-7 md:mb-4 ">
             Expenses
           </h2>
         </div>
-
-        <button onClick={handleExpense} className="ml-auto">
-          <svg
-            className="ml-[-85px] md:ml-[100px] md:w-[60px] md:h-[60px] md:mt-8 mt-5 md:mb-4 w-12 h-12 text-[#01898B]"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M8 12H12M16 12H12M12 12V8M12 12V16"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+        <div className="absolute right-4 md:right-6 md:top-3 top-2 md:top-[22px]">
+          <button onClick={handleExpense}>
+            <svg
+              className="mt-4 w-12 h-12 md:w-[60px] md:h-[60px] md:mt-[22px] text-[#01898B]"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8 12H12M16 12H12M12 12V8M12 12V16"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
 
         {expense && (
           <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-10">

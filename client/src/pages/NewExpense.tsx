@@ -54,10 +54,11 @@ export function NewExpense() {
           alt="Pro Budget Logo"
           className="size-14 max-w-[60px] max-h-[60px] mt-5 md:size-20 md:mt-4 md:max-w-[150px] md:max-h-[150px]"
         />
+
         <div className="flex w-full justify-between items-center md:mt-4">
-          <button onClick={handleExpense}>
+          <button onClick={handleExpense} className="ml-auto">
             <svg
-              className="ml-[300px] mt-4 w-12 h-12 text-[#01898B]"
+              className="mt-4 w-12 h-12 md:w-[60px] md:h-[60px] md:mt-[-0px] text-[#01898B]"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +107,7 @@ export function NewExpense() {
       <hr className="my-4 border-t-2 border-[#01898B]" />
 
       <h2
-        className="text-5xl text-center"
+        className="text-5xl md:text-6xl text-center"
         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
         New Expense
       </h2>
@@ -114,7 +115,7 @@ export function NewExpense() {
       <form onSubmit={handleSubmit}>
         <label className="block">
           <span
-            className="ml-1 text-2xl text-black"
+            className="ml-1 text-2xl md:text-4xl text-black"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
             Expense{' '}
           </span>
@@ -125,13 +126,13 @@ export function NewExpense() {
             type="text"
             value={expenseName}
             onChange={(e) => setExpenseName(e.target.value)}
-            className="mt-1 text-l block border border-gray-600 rounded p-2 h-9 w-full"
+            className="mt-1 text-l  md:text-xl block border border-gray-600 rounded p-2 h-9 md:h-10 w-full"
           />
         </label>
 
         <label className="block mt-3">
           <span
-            className="ml-1 text-xl text-black"
+            className="ml-1 text-xl md:text-3xl text-black"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
             Amount
           </span>
@@ -142,13 +143,13 @@ export function NewExpense() {
             type="text"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="mt-1 text-l block border border-gray-600 rounded p-2 h-9 w-full"
+            className="mt-1  md:text-xl text-l block border border-gray-600 rounded p-2 h-9 md:h-10 w-full"
           />
         </label>
 
         <label className="block mt-3">
           <span
-            className="ml-1 text-xl text-black"
+            className="ml-1 text-xl md:text-3xl text-black"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
             Due Date
           </span>
@@ -159,92 +160,92 @@ export function NewExpense() {
             type="text"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
-            className="mt-1 text-l block border border-gray-600 rounded p-2 h-9 w-full"
+            className="mt-1 text-l md:text-xl block border border-gray-600 rounded p-2 h-9 md:h-10 w-full"
           />
         </label>
 
-        <label className="block mt-4">
+        <label className="block mt-6">
           <span
-            className="ml-1 text-xl text-black"
+            className="ml-1 text-2xl md:text-4xl text-black"
             style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
             Schedule
           </span>
-          <div className="mt-2 pt-2 bg-[#E1E0E0] rounded-lg shadow-md shadow-gray-500 p-2">
-            <label className="mt-1 flex items-center space-x-2">
+          <div className=" flex flex-col md:flex-row md:space-x-36 md:text-2xl md:items-center mt-2 pt-2 bg-[#E1E0E0] rounded-lg shadow-md shadow-gray-500 p-2">
+            <label className="mt-[-2px] md:mt-1 md:mb-1 flex items-center space-x-2">
               <input
                 type="radio"
                 name="Schedule"
                 value="every-week"
-                className="form-radio text-[#01898B]"
+                className="form-radio text-[#01898B] md:w-4 md:h-4"
                 required
                 onChange={(e) => setSchedule(e.target.value)}
               />
               <span
-                className="text-l"
+                className="text-l md:text-2xl"
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
                 Every Week
               </span>
             </label>
 
-            <label className="mt-2 flex items-center space-x-2">
+            <label className="mt-1 flex items-center space-x-2">
               <input
                 type="radio"
                 name="Schedule"
                 value="every-month"
-                className="form-radio text-[#01898B]"
+                className="form-radio text-[#01898B] md:w-4 md:h-4"
                 required
                 onChange={(e) => setSchedule(e.target.value)}
               />
               <span
-                className="text-l"
+                className="text-l md:text-2xl"
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
                 Every Month
               </span>
             </label>
 
-            <label className="mt-2 flex items-center space-x-2">
+            <label className="mt-1 flex items-center space-x-2">
               <input
                 type="radio"
                 name="Schedule"
                 value="every-3-months"
-                className="form-radio text-[#01898B]"
+                className="form-radio text-[#01898B] md:w-4 md:h-4"
                 required
                 onChange={(e) => setSchedule(e.target.value)}
               />
               <span
-                className="text-l"
+                className="text-l md:text-2xl"
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
                 Every 3 Months
               </span>
             </label>
 
-            <label className="mt-2 flex items-center space-x-2">
+            <label className="mt-1 flex items-center space-x-2">
               <input
                 type="radio"
                 name="Schedule"
                 value="every-6-months"
-                className="form-radio text-[#01898B]"
+                className="form-radio text-[#01898B] md:w-4 md:h-4"
                 required
                 onChange={(e) => setSchedule(e.target.value)}
               />
               <span
-                className="text-l"
+                className="text-l md:text-2xl"
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
                 Every 6 Months
               </span>
             </label>
 
-            <label className="mt-2 flex items-center space-x-2">
+            <label className="mt-1 flex items-center space-x-2">
               <input
                 type="radio"
                 name="Schedule"
                 value="every-year"
-                className="form-radio text-[#01898B]"
+                className="form-radio text-[#01898B] md:w-4 md:h-4"
                 required
                 onChange={(e) => setSchedule(e.target.value)}
               />
               <span
-                className="text-l"
+                className="text-l md:text-2xl"
                 style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
                 Every Year
               </span>
@@ -252,22 +253,24 @@ export function NewExpense() {
           </div>
         </label>
 
-        <button
-          className=" drop-shadow-xl mt-5 px-[65px] mr-1 ml-2 text-4xl font-bold py-1 px-12 bg-[#067E81] text-black border rounded-3xl"
-          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
-          onClick={handleSave}>
-          Save
-        </button>
+        <div className="flex justify-center md:mt-1">
+          <button
+            className=" drop-shadow-xl mt-6 px-[65px] md:px-[275px] mr-1 ml-2 text-4xl md:text-5xl font-bold py-1 md:py-2 px-12 bg-[#067E81] text-black border rounded-3xl"
+            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
+            onClick={handleSave}>
+            Save
+          </button>
 
-        <button
-          className=" drop-shadow-xl mt-5 px-[50px] ml-7 text-4xl font-bold py-1 px-12 bg-[#696969] text-black border rounded-3xl"
-          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
-          onClick={() => {
-            closeCancel();
-            navigate('/home');
-          }}>
-          Cancel
-        </button>
+          <button
+            className=" drop-shadow-xl mt-6 px-[50px] md:px-[275px] ml-6 text-4xl font-bold py-1 md:py-2 md:text-5xl px-12 bg-[#696969] text-black border rounded-3xl"
+            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
+            onClick={() => {
+              closeCancel();
+              navigate('/home');
+            }}>
+            Cancel
+          </button>
+        </div>
       </form>
 
       {save && (
